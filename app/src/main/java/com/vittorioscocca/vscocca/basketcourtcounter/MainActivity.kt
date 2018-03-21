@@ -2,6 +2,7 @@ package com.vittorioscocca.vscocca.basketcourtcounter
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -9,10 +10,10 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    var teamAPoints = 0
+    var teamAPoints = 1
     var teamBPoints = 0
-    var lastPointAddedA: MutableList<Int> = mutableListOf()
-    var lastPointAddedB: MutableList<Int> = mutableListOf()
+    var lastPointAddedA: ArrayList<Int> = ArrayList()
+    var lastPointAddedB: ArrayList<Int> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,15 +34,17 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
             R.id.help -> {
-                print("ciao")
+                Log.i("main_activity", "ciao") //Log an information
+                Log.e("","") //Log an error
+                Log.d("","") //Log a debug strings
+                Log.w("","") //Log a Warning
+                Log.v("","") //Log verbose
                 return true
             }
             else -> {
                 return super.onOptionsItemSelected(item)
             }
         }
-
-
     }
 
     fun addThreePoints(v: View){
@@ -99,6 +102,4 @@ class MainActivity : AppCompatActivity() {
         val editText = findViewById<TextView>(R.id.textView4)
         editText.setText("" + teamBPoints)
     }
-
-
 }
