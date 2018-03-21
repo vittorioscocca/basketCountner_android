@@ -10,7 +10,7 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    var teamAPoints = 1
+    var teamAPoints = 0
     var teamBPoints = 0
     var lastPointAddedA: ArrayList<Int> = ArrayList()
     var lastPointAddedB: ArrayList<Int> = ArrayList()
